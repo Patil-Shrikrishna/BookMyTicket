@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import LogoIcon from "./LogoIcon";
-import { BiCaretDown } from "react-icons/bi";
+import { BiCaretDown, BiSolidUser } from "react-icons/bi";
 import BtnPrimary from "./button/BtnPrimary";
 import DarkModeToggle from "./DarkModeToggle";
 import BtnSecondary from "./button/BtnSecondary";
 const Navbar = () => {
+  const [icon, setIcon] = useState(true);
+  const toggleIcon = () => {
+    setIcon(!icon);
+    console.log(icon);
+  };
   return (
     <div className="flex flex-col w-full ">
-      <div className="navbar bg-[#333545] justify-center">
+      <div className="navbar bg-[#333545] justify-center invisible md:visible">
         <div className="flex px-4 justify-center">
-          <LogoIcon src="src/assets/bmswhite.svg" />
+          <LogoIcon src="src/assets/bmtwhite.svg" />
         </div>
         <div className="flex gap-6 w-3/4 justify-center">
           <div className="form-control w-full">
@@ -36,13 +41,13 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex dropdown w-1/3 gap-5 items-center text-sm">
-            <div class="dropdown dropdown-bottom">
+            <div className="dropdown dropdown-bottom">
               <label tabIndex={0} className="flex  gap-2 text-white">
                 Pune <BiCaretDown className="self-center" />
               </label>
               <ul
-                tabindex="0"
-                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
                   <a>Item 1</a>
@@ -57,6 +62,28 @@ const Navbar = () => {
             <DarkModeToggle />
           </div>
         </div>
+      </div>
+      <div className="flex items-center bg-gray-500 h-16 md:invisible absolute left-0 right-0 bottom-0 w-full p-0">
+        <button
+          onClick={() => setIcon(true)}
+          className={`flex flex-col items-center w-1/2 border-r border-gray-400 ${
+            icon ? "text-col-pink" : "text-col-gray"
+          }`}
+        >
+          <span className="w-6">
+            <img src={icon ? "bmt.svg" : "bmtInactive.svg"} />
+          </span>
+          Home
+        </button>
+        <button
+          onClick={() => setIcon(false)}
+          className="flex flex-col items-center focus:text-col-pink w-1/2"
+        >
+          <span>
+            <BiSolidUser size={24} />
+          </span>
+          Profile
+        </button>
       </div>
     </div>
   );

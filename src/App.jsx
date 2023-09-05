@@ -11,5 +11,3 @@ function App() {
 }
 
 export default App;
-// #1F2533, #F5F5F5, #F84464
-// Inter headline / body
