@@ -6,10 +6,6 @@ import DarkModeToggle from "./DarkModeToggle";
 import BtnSecondary from "./button/BtnSecondary";
 const Navbar = () => {
   const [icon, setIcon] = useState(true);
-  const toggleIcon = () => {
-    setIcon(!icon);
-    console.log(icon);
-  };
   return (
     <div className="flex flex-col w-full ">
       <div className="navbar bg-[#333545] justify-center invisible md:visible">
