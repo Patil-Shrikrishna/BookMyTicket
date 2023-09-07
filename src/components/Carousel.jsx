@@ -1,56 +1,9 @@
 import React, { useState } from "react";
 import MoviePoster from "./MoviePoster";
-import Dummy_Poster1 from "../assets/avengers.avif";
-import Dummy_Poster3 from "../assets/theflash.webp";
-import Dummy_Poster4 from "../assets/Guardians_vol_1.png";
-import Dummy_Poster5 from "../assets/smhcoming.png";
-import Dummy_Poster6 from "../assets/theway.png";
 
-const Carousel = () => {
+const Carousel = ({ moviesArray }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const moviesArray = [
-    Dummy_Poster1,
-    Dummy_Poster3,
-    Dummy_Poster4,
-    Dummy_Poster5,
-    Dummy_Poster6,
-    Dummy_Poster6,
-    Dummy_Poster5,
-    Dummy_Poster4,
-    Dummy_Poster3,
-    Dummy_Poster1,
-    Dummy_Poster1,
-    Dummy_Poster3,
-    Dummy_Poster4,
-    Dummy_Poster5,
-    Dummy_Poster6,
-    Dummy_Poster6,
-    Dummy_Poster5,
-    Dummy_Poster4,
-    Dummy_Poster3,
-    Dummy_Poster1,
-    Dummy_Poster1,
-    Dummy_Poster3,
-    Dummy_Poster4,
-    Dummy_Poster5,
-    Dummy_Poster6,
-    Dummy_Poster6,
-    Dummy_Poster5,
-    Dummy_Poster4,
-    Dummy_Poster3,
-    Dummy_Poster1,
-    Dummy_Poster1,
-    Dummy_Poster3,
-    Dummy_Poster4,
-    Dummy_Poster5,
-    Dummy_Poster6,
-    Dummy_Poster6,
-    Dummy_Poster5,
-    Dummy_Poster4,
-    Dummy_Poster3,
-    Dummy_Poster1,
-  ];
   function chunkArray(arr, chunkSize) {
     const newArr = [];
     for (let i = 0; i < arr.length; i += chunkSize) {
@@ -85,9 +38,9 @@ const Carousel = () => {
               index === currentSlide ? "flex" : "hidden"
             }`}
           >
-            {slide.map((card, index) => (
+            {slide.map((movie, index) => (
               <div key={index} className={`carousel-card `}>
-                <MoviePoster poster={card} />
+                <MoviePoster movie={movie} />
               </div>
             ))}
           </div>

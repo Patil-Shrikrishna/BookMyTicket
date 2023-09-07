@@ -1,15 +1,17 @@
 import Navbar from "./components/Navbar";
-import Avatar from "./components/Avatar";
-import Carousel from "./components/Carousel";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="bg-slate-200 dark:bg-slate-800 h-screen m-0 ">
       <Navbar />
-      <div className="flex flex-col gap-10 p-10 dark:text-gray-300">
-        <Avatar />
-        <Carousel />
-      </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/carousel" element={<Carousel />} /> */}
+      </Routes>
+      {/* </div> */}
     </div>
   );
 }
