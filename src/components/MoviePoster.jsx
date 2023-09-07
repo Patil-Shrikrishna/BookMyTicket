@@ -3,10 +3,10 @@ import { AiFillPlayCircle, AiOutlineClockCircle } from "react-icons/ai";
 import { AiFillStar } from "react-icons/ai";
 const MoviePoster = ({ poster }) => {
   return (
-    <div className="card w-72 shadow-xl relative group overflow-hidden text-white">
+    <div className="card w-full shadow-xl relative group overflow-hidden text-white">
       {/* <figure> */}
-      <div className=" bg-black">
-        <img src={poster} alt="movie poster" />
+      <div className="w-56 h-72">
+        <img src={poster} alt="movie poster" className="object-cover" />
       </div>
       {/* </figure> */}
       <div

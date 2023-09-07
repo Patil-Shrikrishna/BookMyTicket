@@ -4,7 +4,7 @@ import Carousel from "./components/Carousel";
 
 function App() {
   return (
-    <div className="bg-slate-200 dark:bg-slate-800 h-screen">
+    <div className="bg-slate-200 dark:bg-slate-800 h-screen m-0 ">
       <Navbar />
       <div className="flex flex-col gap-10 p-10 dark:text-gray-300">
         <Avatar />

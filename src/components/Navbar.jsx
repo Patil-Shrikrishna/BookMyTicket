@@ -8,7 +8,7 @@ const Navbar = () => {
   const [icon, setIcon] = useState(true);
   return (
     <div className="flex flex-col w-full ">
-      <div className="navbar bg-[#333545] justify-center invisible md:visible">
+      <div className="navbar bg-[#333545] justify-center hidden md:flex">
         <div className="flex px-4 justify-center">
           <LogoIcon src="src/assets/bmtwhite.svg" />
         </div>
@@ -59,7 +59,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center bg-gray-500 h-16 md:invisible absolute left-0 right-0 bottom-0 w-full p-0">
+      {/* Mobile bottom navigation  */}
+      <div className="md:hidden flex items-center bg-gray-500 h-16 absolute left-0 right-0 bottom-0 w-full p-0">
         <button
           onClick={() => setIcon(true)}
           className={`flex flex-col items-center w-1/2 border-r border-gray-400 ${
