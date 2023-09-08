@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Theatres from "./pages/Theatres";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/carousel" element={<Carousel />} /> */}
+        <Route path="/theatre" element={<Theatres />} />
       </Routes>
       {/* </div> */}
     </div>

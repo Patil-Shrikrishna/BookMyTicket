@@ -4,8 +4,19 @@ import { BiCaretDown, BiSolidUser } from "react-icons/bi";
 import BtnPrimary from "./button/BtnPrimary";
 import DarkModeToggle from "./DarkModeToggle";
 import BtnSecondary from "./button/BtnSecondary";
+import { useDispatch } from "react-redux";
+import { selectCity } from "../redux/actions/cityAction";
 const Navbar = () => {
   const [icon, setIcon] = useState(true);
+  const [selectedCity, setSelectedCity] = useState("");
+  const citiesArr = ["Pune", "Bengaluru", "Mumbai"];
+  const dispatch = useDispatch();
+
+  const handleClick = (city) => {
+    setSelectedCity(city);
+    dispatch(selectCity(city));
+  };
+
   return (
     <div className="flex flex-col w-full ">
       <div className="navbar bg-[#333545] justify-center hidden md:flex">
@@ -37,22 +48,17 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex dropdown w-1/3 gap-5 items-center text-sm">
-            <div className="dropdown dropdown-bottom">
-              <label tabIndex={0} className="flex  gap-2 text-white">
-                Pune <BiCaretDown className="self-center" />
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
-              </ul>
-            </div>
+            <select
+              onChange={(e) => handleClick(e.target.value)}
+              value={selectedCity ? selectedCity : "Select City"}
+              className="bg-transparent text-white "
+            >
+              {citiesArr.map((city) => (
+                <option className="text-black" key={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
             <BtnPrimary name="Sign In" />
             <BtnSecondary name="Sign Up" />
             <DarkModeToggle />
@@ -86,3 +92,29 @@ const Navbar = () => {
   );
 };
 export default Navbar;
+
+// <div className="relative">
+//         <label
+//           tabIndex={0}
+//           className="flex gap-2 text-black cursor-pointer"
+//           onClick={toggleDropdown}
+//         >
+//           City <BiCaretDown className="self-center" />
+//         </label>
+//         {
+//           <select
+//             className=" dropdown dropdown-bottom z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 absolute"
+//             value={selectedCity ? selectedCity : "Select a city"}
+//             onChange={(e) => handleCitySelect(e.target.value)}
+//           >
+//             {citiesArr.map((city) => (
+//               <option key={city} value={city}>
+//                 {city}
+//               </option>
+//             ))}
+//           </select>
+//         }
+//         {selectedCity && (
+//           <div className="mt-2 text-black">Selected City: {selectedCity}</div>
+//         )}
+//       </div>

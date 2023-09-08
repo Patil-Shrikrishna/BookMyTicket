@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MoviePoster from "./MoviePoster";
+import { Link } from "react-router-dom";
 
 const Carousel = ({ moviesArray }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -40,7 +41,10 @@ const Carousel = ({ moviesArray }) => {
           >
             {slide.map((movie, index) => (
               <div key={index} className={`carousel-card `}>
-                <MoviePoster movie={movie} />
+                <Link to="/theatre" state={movie.name}>
+                  {" "}
+                  <MoviePoster movie={movie} />
+                </Link>
               </div>
             ))}
           </div>
