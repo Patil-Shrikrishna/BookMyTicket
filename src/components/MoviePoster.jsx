@@ -1,14 +1,16 @@
-import { AiFillPlayCircle, AiOutlineClockCircle } from "react-icons/ai";
-
 import { AiFillStar } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { selectMovie } from "../redux/actions/movieAction";
 const MoviePoster = ({ movie }) => {
+  const dispatch = useDispatch();
   return (
-    <div className="card w-full shadow-xl relative group overflow-hidden text-white">
-      {/* <figure> */}
+    <div
+      className="card w-full shadow-xl relative group overflow-hidden text-white"
+      onClick={() => dispatch(selectMovie(movie))}
+    >
       <div className="w-56 h-72">
         <img src={movie.poster} alt="movie poster" className="object-cover" />
       </div>
-      {/* </figure> */}
       <div
         className="card-body px-4 transition absolute opacity-0 group-hover:opacity-100
         bg-gradient-to-b from-transparent  to-gray-950 backdrop-blur-sm duration-500 ease-linear inset-0"

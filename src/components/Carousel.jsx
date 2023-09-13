@@ -1,9 +1,26 @@
 import React, { useState } from "react";
 import MoviePoster from "./MoviePoster";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { theatres } from "../theatresData";
 
 const Carousel = ({ moviesArray }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const selectedCity = useSelector((state) => state.city.selectedCity);
+  const theatresInCity = theatres.filter(
+    (theatre) => theatre.city === selectedCity
+  );
+  const moviesInCity = Array.from([
+    ...new Set(
+      [].concat(
+        ...theatresInCity.map((theatre) => Array.from(theatre.currentMovies))
+      )
+    ),
+  ]);
+
+  const availableMovies = moviesArray.filter((movie) => {
+    if (moviesInCity.includes(movie.name)) return movie;
+  });
 
   function chunkArray(arr, chunkSize) {
     const newArr = [];
@@ -13,8 +30,7 @@ const Carousel = ({ moviesArray }) => {
     return newArr;
   }
   const chunkSize = 5;
-
-  const slides = chunkArray(moviesArray, chunkSize);
+  const slides = chunkArray(availableMovies, chunkSize);
   const totalSlides = slides.length;
 
   const goToPrevSlide = () => {
@@ -41,7 +57,7 @@ const Carousel = ({ moviesArray }) => {
           >
             {slide.map((movie, index) => (
               <div key={index} className={`carousel-card `}>
-                <Link to="/theatre" state={movie.name}>
+                <Link to="/theatre">
                   {" "}
                   <MoviePoster movie={movie} />
                 </Link>
