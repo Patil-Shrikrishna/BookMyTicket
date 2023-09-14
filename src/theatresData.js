@@ -18,6 +18,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "Cinepolis: Nexus WESTEND Mall Aundh, Pune",
@@ -35,6 +36,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "E-SQUARE ELITE: Xion Mall, Hinjawadi, Pune",
@@ -52,6 +54,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "INOX: Jai Ganesh, Akurdi",
@@ -69,6 +72,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "Vishal Cinemaas: Pimpri",
@@ -86,6 +90,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "Cinepolis: Binnypet Mall",
@@ -103,6 +108,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "INOX Lido: Off MG Road, Ulsoor",
@@ -120,6 +126,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "PVR: Bhartiya Mall of Bengaluru",
@@ -137,6 +144,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "PVR: Vega City, Bannerghatta Road",
@@ -154,6 +162,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "Cinepolis: Nexus Shantiniketan, Bengaluru",
@@ -171,6 +180,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "MovieMax: Sion",
@@ -188,6 +198,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "Metro INOX Cinemas: Marine Lines",
@@ -204,6 +215,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "Movietime: The Hub, Goregaon",
@@ -221,6 +233,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "Cinepolis: Fun Republic Mall, Andheri (W)",
@@ -238,6 +251,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "Maxus Cinemas: Bhayander",
@@ -255,6 +269,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "KT Vision Cinema: Vasai (Screens)",
@@ -272,6 +287,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   {
     name: "G7 Multiplex: Bandra (W)",
@@ -289,6 +305,7 @@ export const theatres = [
       movies[Math.floor(Math.random() * 15)],
       movies[Math.floor(Math.random() * 15)],
     ]),
+    showTime: ["09:30 AM", "12:30 PM", "03:45 PM", "06:30 PM", "09:30 PM"],
   },
   //   {
   //     name: "",

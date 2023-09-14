@@ -8,6 +8,7 @@ export default {
         "col-gray": "#1F2533",
         "col-white": "#F5F5F5",
         "col-pink": "#F84464",
+        "col-bgnav": "#333545",
       },
     },
   },
