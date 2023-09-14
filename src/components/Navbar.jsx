@@ -18,11 +18,11 @@ const Navbar = () => {
 
   return (
     <div className="flex flex-col w-full ">
-      <div className="navbar bg-[#333545] justify-center hidden md:flex">
+      <div className="navbar bg-col-bgnav justify-center hidden md:flex">
         <div className="flex px-4 justify-center">
           <LogoIcon src="src/assets/bmtwhite.svg" />
         </div>
-        <div className="flex gap-6 w-3/4 justify-center">
+        <div className="flex gap-6 w-3/4 justify-center items-center">
           <div className="form-control w-full">
             <div className="bg-white flex rounded-md w-full">
               <svg
@@ -41,15 +41,16 @@ const Navbar = () => {
               </svg>
               <input
                 type="text"
+                id="search_bar"
                 placeholder="Search for Movies, Events, plays, Sports and Activities"
                 className="input h-9 text-sm w-full focus:outline-none "
               />
             </div>
           </div>
-          <div className="flex dropdown w-1/3 gap-5 items-center text-sm">
+          <div className="flex dropdown w-2/3 gap-5 items-center text-sm">
             <select
+              id="city_dropdown"
               onChange={(e) => handleClick(e.target.value)}
-              // value={selectedCity ? selectedCity : "Select City"}
               className="bg-transparent text-white "
               defaultValue={"Select City"}
             >
