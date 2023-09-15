@@ -5,7 +5,7 @@ import BtnPrimary from "./button/BtnPrimary";
 import DarkModeToggle from "./DarkModeToggle";
 import BtnSecondary from "./button/BtnSecondary";
 import { useSelector, useDispatch } from "react-redux";
-import { selectCity } from "../redux/actions/cityAction";
+import selectCity from "../redux/actions/cityAction";
 // import Modal from "./Modal";
 const Navbar = () => {
   const [icon, setIcon] = useState(true);

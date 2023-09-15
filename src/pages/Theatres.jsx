@@ -7,12 +7,12 @@ import { useSelector, useDispatch } from "react-redux";
 import Chip from "../components/Chip";
 import DatePickerCarousel from "../components/DatePickerCarousel";
 import { Link } from "react-router-dom";
-import { selectShowTime } from "../redux/actions/showTimeAction";
+import selectTheatre from "../redux/actions/theatreAction";
+import selectShowTime from "../redux/actions/showTimeAction";
 const Theatres = () => {
   const selectedCity = useSelector((state) => state.city.selectedCity);
   const selectedMovie = useSelector((state) => state.movie.selectedMovie);
 
-  // const selectedMovie = useSelector((state) => state.movie.selectedMovie);
   console.log(selectedCity);
   console.log(selectedMovie);
 
@@ -26,9 +26,10 @@ const Theatres = () => {
         classes="text-xs uppercase text-gray-500 border-gray-500"
       />
     ));
-  // const handleClick = (show) => {
-
-  // };
+  const handleClick = (show, theatre) => {
+    dispatch(selectShowTime(show));
+    dispatch(selectTheatre(theatre));
+  };
   return (
     <div className="flex flex-col bg-slate-100">
       <div className="flex flex-col bg-col-bgnav border-t-8 border-col-gray p-4">
@@ -73,7 +74,7 @@ const Theatres = () => {
                   {theatre.showTime.map((show, index) => (
                     <Link key={index} to="/seat">
                       <button
-                        onClick={() => dispatch(selectShowTime(show))}
+                        onClick={() => handleClick(show, theatre)}
                         className="px-4 py-1 btn rounded-md border-gray-400 text-sm text-green-800 bg-white hover:bg-white hover:border-gray-400"
                       >
                         {show}

@@ -1,7 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import selectShowDate from "../redux/actions/dateAction";
 
 const DatePickerCarousel = () => {
+  const dispatch = useDispatch();
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const today = new Date();
+
+  const options = { year: "numeric", month: "short", day: "numeric" };
+
+  const selectedFormattedDate = selectedDate.toLocaleDateString(
+    "en-US",
+    options
+  );
+  const todaysFormattedDate = today.toLocaleDateString("en-US", options);
+
+  useEffect(() => {
+    dispatch(selectShowDate(selectedDate));
+  }, [selectedDate]);
 
   const goToDate = (daysToAdd) => {
     const newDate = new Date(selectedDate);
@@ -9,7 +25,7 @@ const DatePickerCarousel = () => {
     setSelectedDate(newDate);
   };
   const weekdays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
-  var month = [
+  var months = [
     "Jan",
     "Feb",
     "Mar",
@@ -24,12 +40,17 @@ const DatePickerCarousel = () => {
     "Dec",
   ];
 
-  const getMonth = month[selectedDate.getMonth()];
+  const getMonth = months[selectedDate.getMonth()];
   const getDay = weekdays[selectedDate.getDay()];
+
   return (
     <div className=" flex items-center date-picker-carousel w-1/2">
       <div
         onClick={() => goToDate(-1)}
+        style={{
+          pointerEvents:
+            selectedFormattedDate === todaysFormattedDate ? "none" : "auto",
+        }}
         className="btn bg-transparent hover:bg-transparent border-none text-gray-400 hover:text-gray-600"
       >
         ❮
@@ -46,7 +67,6 @@ const DatePickerCarousel = () => {
         </p>
       </div>
 
-      {/* <div className="selected-date">{selectedDate.toDateString()}</div> */}
       <div
         onClick={() => goToDate(1)}
         className="btn bg-transparent hover:bg-transparent border-none text-gray-400 hover:text-gray-600"

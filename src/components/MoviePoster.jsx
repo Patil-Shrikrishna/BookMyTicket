@@ -1,6 +1,6 @@
 import { AiFillStar } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { selectMovie } from "../redux/actions/movieAction";
+import selectMovie from "../redux/actions/movieAction";
 const MoviePoster = ({ movie }) => {
   const dispatch = useDispatch();
   return (
